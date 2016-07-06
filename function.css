@@ -1,0 +1,15 @@
+.images {
+    float: left;
+    width: 100px;
+    padding: 10px;
+}
+
+#overlay {
+  border: 1px solid black;
+  width: 350px;
+  height: 200px;
+  display: inline-block;
+  background-image: url('images/Proteins Large/Keratin.jpg');
+  background-repeat: no-repeat;
+
+}
