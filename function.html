@@ -5,145 +5,255 @@
 				  src="http://code.jquery.com/jquery-3.0.0.min.js"
 				  integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
 				  crossorigin="anonymous"></script>
+    <script src='elevatezoom-master-2/jquery-1.8.3.min.js'></script>
+	<script src='elevatezoom-master-2/jquery.elevatezoom.js'></script>
 	<link rel="stylesheet" type="text/css" href="function.css">
 <!--<link href="src/theme/default.css" rel="stylesheet">-->
 
 
     </head>
+
 <body>
-	<img id="imgZoom" width="200px" height="180px" onmousemove="zoomIn(event)" onmouseout="zoomOut()" src="images/Proteins/Keratin.jpg">
-<div id="overlay" onmousemove="zoomIn(event)"></div>
+      <h1>Protein Topic Model Exploration</h1>
+    <img id="img" class ="pics" src="images/Proteins/Albumin_blue_red_green_medium.jpg" data-zoom-image="images/ProteinsLarge/Albumin_blue_red_green_medium Large.jpg" alt="na"/>
+	<!--<img id="gal1" width="300px" height="200px" onmousemove="zoomIn(event)" onmouseout="zoomOut()" src="images/ProteinsLarge/Keratins.jpg">-->
+<!--<div id="overlay" onmousemove="zoomIn(event)"></div>-->
   <!--<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/Proteins/Keratin.jpg" alt="Smiley" width="200" height="180" >-->
+  <td rowspan="1" style="vertical-align:middle">
+      <b>
+          Toggle channels:
+      </b>
+
+    </td
+    <td>
+        <button name="blue" class="channel blue inactive" onclick="changeImage(this.name)">Nucleus</button>
+        <button name="red" class="channel red inactive" onclick="changeImage(this.name)">Microtubules</button>
+				<button name="green" class="channel green inactive" onclick="changeImage(this.name)">Antibody</button>
+    </td>
+   <script>
+       var showGreen= 1;
+       var showBlue= 1;
+       var showRed= 1;
+
+       function rebuildPaths(cars){
+         var i =0;
+      for(i=0; i<cars.length; i++){
+
+          //build new path
+         var newPaths = cars[i].name;
+          if (showBlue ==1){
+              newPaths= newPaths +"_blue";
+
+          }
+
+         if (showRed==1){
+              newPaths= newPaths +"_red";
+
+          }
+           if (showGreen==1){
+              newPaths= newPaths +"_green";
+
+          }
+          newPaths =newPaths + "_medium.jpg";
+          cars[i].src1 =newPaths;
+
+//$('td').append( newPaths );
+
+
+				console.log(newPaths);
+				document.getElementById("img")
+      }
+	return cars
+       }
+
+function changeImage(color)
+{
+	if (color =="red")
+	{
+		showRed= showRed*-1
+	}
+	if (color =="blue")
+	{
+		showBlue= showBlue*-1
+	}
+	if (color =="green")
+	{
+		showGreen= showGreen*-1
+	}
+	cars = rebuildPaths (cars);
+}
+
+    </script>
+
 
 <!--<img id="myimg" src="images/Proteins/Keratin.jpg" width ="200" height= "180">-->
+<div id="intro">
+    <div class="fl_right">
+      <h2>About These Proteins</h2>
+      <p>This is a summary of the list of some proteins in the Human Protein Atlas.</p>
+      <p>The proteins displayed here are arranged in order of proximity to one another. They also contain information about their gene name, description and protein class.</p>
+      <p>For more information about these proteins and their descriptions in <a href="http://www.proteinatlas.org">the Human Protein Atlas</a>.</p>
+      <ul>
+        <li><a href="#">Link Text</a></li>
+        <li><a href="#">Link Text</a></li>
+        <li class="last"><a href="#">Link Text</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
 
-<div class="images"></div>
+
+<div id ="gal1" class="images">
+
 
   <script type="text/javascript">
   cars = [
     {
-      name: "Albumin",
-      location: [380, 3, 5],
-      distance: 20,
-     src:"images/Proteins/Albumin.jpg",
-		 title: "The name of this protein is",
-     description: "Albumin"
+        name: "Albumin",
+        location: [380, 3, 5],
+        distance: 20,
+				  //src1:"images/Proteins/Albumin.jpg",
+        src1: "images/Proteins/Albumin_blue_red_green_medium.jpg",
+        src2: "images/ProteinsLarge/Albumin_blue_red_green_medium Large.jpg",
+        src:"images/Proteins/Albumin_blue_red_green_medium_Thumb.jpg",
+        title: "The name of this protein is",
+        description: "Gene name: ALB <br>Protein class: Albumin <br> Number of Transcripts: 9"
+
 
 
 },
     {
-      name: "Tubulin",
-      location: [180,20, 40],
+        name: "Tubulin",
+        location: [180,20, 40],
         distance: 9,
-        src:"images/Proteins/Tubulin.jpg",
-				title: "This is a text",
-description:"Tubulin"
+        src1: "images/Proteins/Tubulin_blue_red_green_medium.jpg",
+        src2: "images/ProteinsLarge/Tubulin_blue_red_green_medium Large.jpg",
+        src:"images/Proteins/Tubulin_blue_red_green_medium_Thumb.jpg",
+        title: "This is a text",
+        description:"Gene Name: TBCA <br>Protein class: Tubulin folding cofactor A <br> Number of Transcripts: 7"
 
     },
     {
-      name: "Myosin",
-      location: [40, 60, 70],
+        name: "Myosin",
+        location: [40, 60, 70],
         distance: 5,
-        src:"images/Proteins/Myosin.jpg",
-description:"Myosin"
+        src1: "images/Proteins/Myosin.jpg",
+        src2: "images/ProteinsLarge/Myosin.jpg",
+        src:"images/Proteins/Myosin_blue_red_green_medium_Thumb.jpg",
+        description:"Gene Name: MYH10 <br>Protein class: Myosin, heavy chain 10, non-muscle <br> Number of Transcripts: 4"
 
     },
     {
-      name: "Collagen",
-      location: [200,10, 60],
+        name: "Collagen",
+        location: [200,10, 60],
         distance: 12,
-        src:"images/Proteins/Collagen.jpg",
-description:"Collagen"
+        src1: "images/Proteins/Collagen_blue_red_green_medium.jpg",
+       src2: "images/ProteinsLarge/Collagen_blue_red_green_medium Large.jpg",
+        src:"images/Proteins/Collagen_blue_red_green_medium_Thumb.jpg",
+        description:"Gene name: COL5A1 <br>Protein class: Collagen, type V, alpha 1 <br> Number of Transripts: 3"
+
     }
   ]
 
-	function zoomIn(event) {
-	  var element = document.getElementById("overlay");
-	  element.style.display = "inline-block";
-	  var img = document.getElementById("imgZoom");
-	  var posX = event.offsetX ? (event.offsetX) : event.pageX - img.offsetLeft;
-	  var posY = event.offsetY ? (event.offsetY) : event.pageY - img.offsetTop;
-	  element.style.backgroundPosition = (-posX * 4) + "px " + (-posY * 4) + "px";
-
-	}
-
-	function zoomOut() {
-	  var element = document.getElementById("overlay");
-	  element.style.display = "none";
-	}
-
-var oImg = '';
-	$.each(cars, function(key, val) {
-	          oImg = '<div class="images"><img src="' + val.src + '" class="img-thumbnail thumb m-r" width="100" height="100"/><span>' + val.description + '</span></div>';
-
-	          $(".images").append(oImg);
-	});
 
 
 
-    $(document).on("click", ".pics", function(e){
 
-          var id = $(this).data("id");
+    $(document).on("click", ".pics",".txt", function(e)
+		{
+           var id = $(this).data("id");
            console.log(id);
+         //console.log(cars[id].distance);
+           cars = recalculate_distance(cars, id);
+           cars.sort (function(a, b){return a.distance -b.distance;})
+           $(".images").html("");
+
+           var i =0;
+           for(i=0; i<cars.length; i++)
+					 {
+
+                     var oIMG = "<a href='#' data-image='"+cars[i].src1+"' "+" data-zoom-image='"+cars[i].src2+"'>";
+                     oIMG +="<img width='100px' height='100px' title='"+cars[i].title+"'alt='na' data-id='"+i+"' index='"+i+"' class='pics'    src='"+cars[i].src+"'></img>";
+                     oIMG +="<p>"+cars[i].description+"</p>";
+										 oIMG +="<p>"+cars[i].distance+"</p>";
+                     oIMG +="</a>";
+                     $(".images").append(oIMG);
 
 
 
-          //console.log(cars[id].distance);
-         cars = recalculate_distance(cars, id);
-          cars.sort (function(a, b){return a.distance -b.distance;})
-          $(".images").html("");
-        var i =0;
-      for(i=0; i<cars.length; i++){
+          //var description= document.createElement("div");
+         //var t=document.createTextNode(cars[i].description);
+        //description.appendChild(t);
+        //description.setAttribute('height', '100px');
+            //description.setAttribute('width', '100px');
+                   //description.setAttribute('class', 'txt');
 
-          var oImg = document.createElement("IMG");
-          oImg.setAttribute('src', cars[i].src);
-          oImg.setAttribute('alt', 'na');
-          oImg.setAttribute('height', '100px');
-          oImg.setAttribute('width', '100px');
-          oImg.setAttribute('index', i);
-          oImg.setAttribute('class', 'pics');
-          oImg.setAttribute('data-id', i);
-    oImg.setAttribute('title', cars[i].title);
+                                   //$(".text").append(description);
 
-          $(".images").append(oImg);
 
-      }
+         //document.body.appendChild(description);
+           }
 		})
 
+     var i =0;
+      for(i=0; i<cars.length; i++)
+			{
 
-
-    var i =0;
-      for(i=0; i<cars.length; i++){
-          var oImg = document.createElement("IMG");
-          oImg.setAttribute('src', cars[i].src);
-          oImg.setAttribute('alt', 'na');
-          oImg.setAttribute('height', '100px');
-          oImg.setAttribute('width', '100px');
-          oImg.setAttribute('index', i);
-          oImg.setAttribute('class', 'pics');
-          oImg.setAttribute('data-id', i);
-          oImg.setAttribute('title', cars[i].title);
-
-
-         $(".images").append(oImg);
+              var oIMG = "<a href='#' data-image='"+cars[i].src1+"' "+" data-zoom-image='"+cars[i].src2+"'>";
+              oIMG +="<img width='100px' height='100px' title='"+cars[i].title+"'alt='na' data-id='"+i+"' index='"+i+"' class='pics'  src='"+cars[i].src+"'></img>";
+              oIMG +="</a>";
+              oIMG +="<p>"+cars[i].description+"</p>";
+							oIMG +="<p>"+cars[i].distance+"</p>";
+              $(".images").append(oIMG);
       }
-function recalculate_distance(cars, anchorIndex) {
-    var i =0;
-  for (i=0; i<cars.length; i++)
-  {
-    cars[i].distance = Euclidean_distance (cars[i].location, cars[anchorIndex].location)
-    console.log(cars[i].distance);
-  }
-  return cars                // The function returns the product of p1 and p2
+
+function recalculate_distance(cars, anchorIndex)
+{
+       var i =0;
+       for (i=0; i<cars.length; i++)
+      {
+            cars[i].distance = Euclidean_distance (cars[i].location, cars[anchorIndex].location)
+            console.log(cars[i].distance);
+
+
+       }
+       return cars                // The function returns the product of p1 and p2
 }
-function Euclidean_distance(pt1, pt2) {
-	var d= 0;
-	for (i =0; i<pt1.length; i++)
-	{
-		d = d + (pt1[i]-pt2[i])*(pt1[i]-pt2[i]);
-	}
-	return Math.sqrt(d);
+function Euclidean_distance(pt1, pt2)
+{
+	    var d= 0;
+	    for (i =0; i<pt1.length; i++)
+	    {
+		         d = d + (pt1[i]-pt2[i])*(pt1[i]-pt2[i]);
+	    }
+
+	    return Math.sqrt(d);
 }
+cars[i].distance.toPrecision(4);
   </script>
+
+</div>
+
+<script>
+//initiate the plugin and pass the id of the div containing gallery images
+  $("#img").elevateZoom({gallery:'images', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true});
+
+//pass the images to Fancybox
+$("#img").bind("click", function(e)
+{
+     var ez =   $('gal1').on('elevatezoom');
+	    //console.log(getGalleryList());
+      $.fancybox(ez.getGalleryList());
+     return false;
+});
+
+    </script>
+<div class="wrapper col6">
+<div id="copyright">
+<p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="http://murphylab.web.cmu.edu">Murphy Lab</a></p>
+    <!--<p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>-->
+
+  </div>
+</div>
 </body>
 </html>
