@@ -12,87 +12,85 @@
 
 
     </head>
-
+  
 <body>
       <h1>Protein Topic Model Exploration</h1>
-    <img id="img" class ="pics" src="images/Proteins/Albumin_blue_red_green_medium.jpg" data-zoom-image="images/ProteinsLarge/Albumin_blue_red_green_medium Large.jpg" alt="na"/>
+    <img id="img" class ="pics" src="images/Proteins/Albumin.jpg" data-zoom-image="images/ProteinsLarge/Albumin.jpg" alt="na"/>
 	<!--<img id="gal1" width="300px" height="200px" onmousemove="zoomIn(event)" onmouseout="zoomOut()" src="images/ProteinsLarge/Keratins.jpg">-->
 <!--<div id="overlay" onmousemove="zoomIn(event)"></div>-->
   <!--<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="images/Proteins/Keratin.jpg" alt="Smiley" width="200" height="180" >-->
   <td rowspan="1" style="vertical-align:middle">
       <b>
-          Toggle channels:
+          toggle channels:
       </b>
-
-    </td
+      
     <td>
-        <button name="blue" class="channel blue inactive" onclick="changeImage(this.name)">Nucleus</button>
-        <button name="red" class="channel red inactive" onclick="changeImage(this.name)">Microtubules</button>
-				<button name="green" class="channel green inactive" onclick="changeImage(this.name)">Antibody</button>
-    </td>
-   <script>
-       var showGreen= 1;
-       var showBlue= 1;
-       var showRed= 1;
+       <button name="blue" class="channel blue inactive" onclick="changeImage(this.name)">Nucleus</button>
+       <button name="red" class="channel red inactive" onclick="changeImage(this.name)">Microtubules</button>
+<button name="green" class="channel green inactive" onclick="changeImage(this.name)">Antibody</button>
+   </td>
+  <script>
+      var showGreen= 1;
+      var showBlue= 1;
+      var showRed= 1;
 
-       function rebuildPaths(cars){
-         var i =0;
-      for(i=0; i<cars.length; i++){
+      function rebuildPaths(cars){
+        var i =0;
+     for(i=0; i<cars.length; i++){
 
-          //build new path
-         var newPaths = cars[i].name;
-          if (showBlue ==1){
-              newPaths= newPaths +"_blue";
+         //build new path
+        var newPaths = cars[i].name;
+         if (showBlue ==1){
+             newPaths= newPaths +"_blue";
 
-          }
+         }
 
-         if (showRed==1){
-              newPaths= newPaths +"_red";
+        if (showRed==1){
+             newPaths= newPaths +"_red";
 
-          }
-           if (showGreen==1){
-              newPaths= newPaths +"_green";
+         }
+          if (showGreen==1){
+             newPaths= newPaths +"_green";
 
-          }
-          newPaths =newPaths + "_medium.jpg";
-          cars[i].src1 =newPaths;
+         }
+         newPaths =newPaths + "_medium.jpg";
+         cars[i].src1 =newPaths;
 
 //$('td').append( newPaths );
 
 
-				console.log(newPaths);
-				document.getElementById("img")
+console.log(newPaths);
+document.getElementById("img")
+     }
+return cars
       }
-	return cars
-       }
 
 function changeImage(color)
 {
-	if (color =="red")
-	{
-		showRed= showRed*-1
-	}
-	if (color =="blue")
-	{
-		showBlue= showBlue*-1
-	}
-	if (color =="green")
-	{
-		showGreen= showGreen*-1
-	}
-	cars = rebuildPaths (cars);
+if (color =="red")
+{
+showRed= showRed*-1
 }
-
+if (color =="blue")
+{
+showBlue= showBlue*-1
+}
+if (color =="green")
+{
+showGreen= showGreen*-1
+}
+cars = rebuildPaths (cars);
+}
     </script>
-
-
+    
+    
 <!--<img id="myimg" src="images/Proteins/Keratin.jpg" width ="200" height= "180">-->
 <div id="intro">
     <div class="fl_right">
-      <h2>About These Proteins</h2>
-      <p>This is a summary of the list of some proteins in the Human Protein Atlas.</p>
-      <p>The proteins displayed here are arranged in order of proximity to one another. They also contain information about their gene name, description and protein class.</p>
-      <p>For more information about these proteins and their descriptions in <a href="http://www.proteinatlas.org">the Human Protein Atlas</a>.</p>
+      <h2>About This Protein</h2>
+      <p>This is a W3C standards compliant free website template from <a href="http://www.os-templates.com/">OS Templates</a>.</p>
+      <p>This template is distributed using a <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>, which allows you to use and modify the template for both personal and commercial use when you keep the provided credit links in the footer.</p>
+      <p>For more CSS templates visit <a href="http://www.os-templates.com/">Free Website Templates</a>.</p>
       <ul>
         <li><a href="#">Link Text</a></li>
         <li><a href="#">Link Text</a></li>
@@ -104,7 +102,7 @@ function changeImage(color)
 
 
 <div id ="gal1" class="images">
-
+    
 
   <script type="text/javascript">
   cars = [
@@ -112,12 +110,11 @@ function changeImage(color)
         name: "Albumin",
         location: [380, 3, 5],
         distance: 20,
-				  //src1:"images/Proteins/Albumin.jpg",
         src1: "images/Proteins/Albumin_blue_red_green_medium.jpg",
-        src2: "images/ProteinsLarge/Albumin_blue_red_green_medium Large.jpg",
-        src:"images/Proteins/Albumin_blue_red_green_medium_Thumb.jpg",
+        src2: "images/ProteinsLarge/Albumin.jpg",
+        src:"images/Proteins/AlbuminThumb.jpg",
         title: "The name of this protein is",
-        description: "Gene name: ALB <br>Protein class: Albumin <br> Number of Transcripts: 9"
+        description: "Albumin is the type another type of problem that occurs when other cells combine. More Text needs to be added"
 
 
 
@@ -126,11 +123,11 @@ function changeImage(color)
         name: "Tubulin",
         location: [180,20, 40],
         distance: 9,
-        src1: "images/Proteins/Tubulin_blue_red_green_medium.jpg",
-        src2: "images/ProteinsLarge/Tubulin_blue_red_green_medium Large.jpg",
-        src:"images/Proteins/Tubulin_blue_red_green_medium_Thumb.jpg",
+        src1: "images/Proteins/Tubulin.jpg",
+        src2: "images/ProteinsLarge/Tubulin.jpg",
+        src:"images/Proteins/TubulinThumb.jpg",
         title: "This is a text",
-        description:"Gene Name: TBCA <br>Protein class: Tubulin folding cofactor A <br> Number of Transcripts: 7"
+        description:"Tubulin is the type is the type of protein where a lot of cell line comes together to form a giant line"
 
     },
     {
@@ -139,120 +136,108 @@ function changeImage(color)
         distance: 5,
         src1: "images/Proteins/Myosin.jpg",
         src2: "images/ProteinsLarge/Myosin.jpg",
-        src:"images/Proteins/Myosin_blue_red_green_medium_Thumb.jpg",
-        description:"Gene Name: MYH10 <br>Protein class: Myosin, heavy chain 10, non-muscle <br> Number of Transcripts: 4"
+        src:"images/Proteins/MyosinThumb.jpg",
+        description:"Antibody staining consistent with RNA expression data. There needs to be more text added to this solution"
 
     },
     {
         name: "Collagen",
         location: [200,10, 60],
         distance: 12,
-        src1: "images/Proteins/Collagen_blue_red_green_medium.jpg",
-       src2: "images/ProteinsLarge/Collagen_blue_red_green_medium Large.jpg",
-        src:"images/Proteins/Collagen_blue_red_green_medium_Thumb.jpg",
-        description:"Gene name: COL5A1 <br>Protein class: Collagen, type V, alpha 1 <br> Number of Transripts: 3"
-
+        src1: "images/Proteins/Collagen.jpg",
+       src2: "elevatezoom-master-2/images/large/Collagen.jpg",
+        src:"images/Proteins/CollagenThumb.jpg",
+        description:"Collagenisthetype of cell line that appears when mulitple things happen to a hela cell, more text needs to be inputted"
     }
   ]
 
+	
 
 
 
+    $(document).on("click", ".pics",".txt", function(e){
 
-    $(document).on("click", ".pics",".txt", function(e)
-		{
-           var id = $(this).data("id");
+          var id = $(this).data("id");
            console.log(id);
          //console.log(cars[id].distance);
            cars = recalculate_distance(cars, id);
            cars.sort (function(a, b){return a.distance -b.distance;})
            $(".images").html("");
-
+          
            var i =0;
-           for(i=0; i<cars.length; i++)
-					 {
+         for(i=0; i<cars.length; i++){
 
-                     var oIMG = "<a href='#' data-image='"+cars[i].src1+"' "+" data-zoom-image='"+cars[i].src2+"'>";
-                     oIMG +="<img width='100px' height='100px' title='"+cars[i].title+"'alt='na' data-id='"+i+"' index='"+i+"' class='pics'    src='"+cars[i].src+"'></img>";
-                     oIMG +="<p>"+cars[i].description+"</p>";
-										 oIMG +="<p>"+cars[i].distance+"</p>";
-                     oIMG +="</a>";
-                     $(".images").append(oIMG);
-
-
-
+var oIMG = "<a href='#' data-image='"+cars[i].src1+"' "+" data-zoom-image='"+cars[i].src2+"'>";
+     oIMG +="<img width='100px' height='100px' title='"+cars[i].title+"' alt='na' data-id='"+i+"' index='"+i+"' class='pics'    src='"+cars[i].src+"'></img>";
+          oIMG +="<p>"+cars[i].description+"</p>";
+     oIMG +="</a>";
+     $(".images").append(oIMG);
+             
+             
+             
           //var description= document.createElement("div");
          //var t=document.createTextNode(cars[i].description);
         //description.appendChild(t);
         //description.setAttribute('height', '100px');
-            //description.setAttribute('width', '100px');
-                   //description.setAttribute('class', 'txt');
+        //description.setAttribute('width', '100px');
+        //description.setAttribute('class', 'txt');
 
-                                   //$(".text").append(description);
+//$(".text").append(description);
 
 
          //document.body.appendChild(description);
-           }
+      }
 		})
 
      var i =0;
-      for(i=0; i<cars.length; i++)
-			{
+      for(i=0; i<cars.length; i++){
 
-              var oIMG = "<a href='#' data-image='"+cars[i].src1+"' "+" data-zoom-image='"+cars[i].src2+"'>";
-              oIMG +="<img width='100px' height='100px' title='"+cars[i].title+"'alt='na' data-id='"+i+"' index='"+i+"' class='pics'  src='"+cars[i].src+"'></img>";
-              oIMG +="</a>";
-              oIMG +="<p>"+cars[i].description+"</p>";
-							oIMG +="<p>"+cars[i].distance+"</p>";
-              $(".images").append(oIMG);
+var oIMG = "<a href='#' data-image='"+cars[i].src1+"' "+" data-zoom-image='"+cars[i].src2+"'>";
+     oIMG +="<img width='100px' height='100px' title='"+cars[i].title+"' alt='na' data-id='"+i+"' index='"+i+"' class='pics'  src='"+cars[i].src+"'></img>";
+     oIMG +="</a>";
+    oIMG +="<p>"+cars[i].description+"</p>";
+     $(".images").append(oIMG);
       }
 
-function recalculate_distance(cars, anchorIndex)
-{
+function recalculate_distance(cars, anchorIndex) {
        var i =0;
-       for (i=0; i<cars.length; i++)
-      {
-            cars[i].distance = Euclidean_distance (cars[i].location, cars[anchorIndex].location)
-            console.log(cars[i].distance);
-
-
-       }
-       return cars                // The function returns the product of p1 and p2
+  for (i=0; i<cars.length; i++)
+  {
+    cars[i].distance = Euclidean_distance (cars[i].location, cars[anchorIndex].location)
+    console.log(cars[i].distance);
+  }
+  return cars                // The function returns the product of p1 and p2
 }
-function Euclidean_distance(pt1, pt2)
-{
-	    var d= 0;
-	    for (i =0; i<pt1.length; i++)
-	    {
-		         d = d + (pt1[i]-pt2[i])*(pt1[i]-pt2[i]);
-	    }
-
-	    return Math.sqrt(d);
+function Euclidean_distance(pt1, pt2) {
+	var d= 0;
+	for (i =0; i<pt1.length; i++)
+	{
+		d = d + (pt1[i]-pt2[i])*(pt1[i]-pt2[i]);
+	}
+	return Math.sqrt(d);
 }
-cars[i].distance.toPrecision(4);
+    
   </script>
-
-</div>
-
-<script>
+    
+    </div>
+   
+    <script>
 //initiate the plugin and pass the id of the div containing gallery images
-  $("#img").elevateZoom({gallery:'images', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true});
-
+$("#img").elevateZoom({gallery:'gal1', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true}); 
+  
 //pass the images to Fancybox
-$("#img").bind("click", function(e)
-{
-     var ez =   $('gal1').on('elevatezoom');
-	    //console.log(getGalleryList());
-      $.fancybox(ez.getGalleryList());
-     return false;
+$("#img").bind("click", function(e) {  
+  var ez =   $('gal1').on('elevatezoom');
+   $.fancybox(ez.getGalleryList());
+    return false;
 });
-
+        
     </script>
-<div class="wrapper col6">
-<div id="copyright">
-<p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="http://murphylab.web.cmu.edu">Murphy Lab</a></p>
+    <div class="wrapper col6">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="http://murphylab.web.cmu.edu">Murphy Lab</a></p>
     <!--<p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>-->
-
+    
   </div>
 </div>
 </body>
